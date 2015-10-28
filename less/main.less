@@ -1,5 +1,168 @@
-@color: blue;
+@mainColor: #B62537;
+@textColor: #222222;
+@keyTextColor: #2080b9;
+
+*{
+	padding: 0;
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	box-sizing: border-box;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+
+li{
+	list-style: none;
+}
+
+p{
+	line-height: 24px;
+}
 
 body{
-	color: @n;
+	color: @textColor;
+	background: lighten(@keyTextColor,40%);
+}
+
+.main-header,
+.main-content,
+.main-footer{
+	background: white;
+	margin: 0 auto;
+	width: 1024px;
+}
+.main-header{
+	margin-top: 52px;
+	overflow: hidden;
+	border-top: 2px solid @mainColor;
+}
+.main-nav{
+	margin-left: 75px;
+	li{
+		float: left;
+		a{
+			display: block;
+			height: 65px;
+			line-height: 65px;
+			background: @mainColor;
+			font-size: 16px;
+			font-weight: 600;
+			text-align: center;
+			padding: 0 12px;
+			&:hover,
+			&.active{
+				background: @textColor;
+			}
+		}
+	}
+}
+.main-content{
+	padding: 35px 50px 50px;
+	border-bottom: 1px solid lighten(@mainColor, 45%);
+	overflow: hidden;
+}
+.main-aside{
+	width: 245px;
+	float: left;
+	margin-right: 36px;
+	img{
+		width: 205px;
+	}
+}
+.time-info,
+.location-info{
+	padding: 20px 0;
+	border-bottom: 1px solid #eee;
+}
+.time-info{
+	p{
+		padding: 0 10px;
+	}
+}
+.location-info{
+	h3{
+		color: @keyTextColor;
+	}
+	p{
+		padding: 10px;
+	}
+}
+.social-icon{
+	padding: 20px;
+	li{
+		margin-right: 20px;
+	}
+	li,
+	a{
+		display: inline-block;
+	}
+	li:first-child{
+		background: url(http://www.googlesummit.org/_/rsrc/1444170910973/config/twitter.png) no-repeat;
+	}
+	li:last-child{
+		background: url(http://www.googlesummit.org/_/rsrc/1444170909717/config/facebook.png) no-repeat;
+	}
+	a{
+		text-indent: -9999em;
+		height: 64px;
+		width: 64px;
+	}
+}
+
+.main-section{
+	width: 643px;
+	float: left;
+}
+.welcome-intro,
+.welcome-article{
+	p{
+		padding: 10px 0;
+	}
+}
+.welcome-intro{
+	border-bottom: 1px solid #eee;
+	padding-bottom: 20px;
+}
+.welcome-article{
+	margin-top: 20px;
+	h2{
+		color: @mainColor;
+		font-size: 36px;
+		margin-bottom: 20px;
+	}
+	img{
+		float: left;
+		margin-right: 20px;
+	}
+}
+.main-footer{
+	padding: 50px 0;
+	margin-bottom: 52px;
+	text-align: center;
+	border-bottom: 30px solid @mainColor;
+}
+.prior-info{
+	margin-bottom: 40px;
+	a{
+		color:@keyTextColor;
+	}
+	p{
+		margin-top: 10px;
+	}
+}
+.sponsor-info{
+	width: 700px;
+	margin: 0 auto;
+}
+.sponsor-list{
+	li{
+		display: inline-block;
+		padding: 30px 20px;
+	}
+	img{
+		height: 70px;
+	}
 }

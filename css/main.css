@@ -1,3 +1,150 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+li {
+  list-style: none;
+}
+p {
+  line-height: 24px;
+}
 body {
-  color: green;
+  color: #222222;
+  background: #b3daf2;
+}
+.main-header,
+.main-content,
+.main-footer {
+  background: white;
+  margin: 0 auto;
+  width: 1024px;
+}
+.main-header {
+  margin-top: 52px;
+  overflow: hidden;
+  border-top: 2px solid #B62537;
+}
+.main-nav {
+  margin-left: 75px;
+}
+.main-nav li {
+  float: left;
+}
+.main-nav li a {
+  display: block;
+  height: 65px;
+  line-height: 65px;
+  background: #B62537;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 12px;
+}
+.main-nav li a:hover,
+.main-nav li a.active {
+  background: #222222;
+}
+.main-content {
+  padding: 35px 50px 50px;
+  border-bottom: 1px solid #f5ccd1;
+  overflow: hidden;
+}
+.main-aside {
+  width: 245px;
+  float: left;
+  margin-right: 36px;
+}
+.main-aside img {
+  width: 205px;
+}
+.time-info,
+.location-info {
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+.time-info p {
+  padding: 0 10px;
+}
+.location-info h3 {
+  color: #2080b9;
+}
+.location-info p {
+  padding: 10px;
+}
+.social-icon {
+  padding: 20px;
+}
+.social-icon li {
+  margin-right: 20px;
+}
+.social-icon li,
+.social-icon a {
+  display: inline-block;
+}
+.social-icon li:first-child {
+  background: url(http://www.googlesummit.org/_/rsrc/1444170910973/config/twitter.png) no-repeat;
+}
+.social-icon li:last-child {
+  background: url(http://www.googlesummit.org/_/rsrc/1444170909717/config/facebook.png) no-repeat;
+}
+.social-icon a {
+  text-indent: -9999em;
+  height: 64px;
+  width: 64px;
+}
+.main-section {
+  width: 643px;
+  float: left;
+}
+.welcome-intro p,
+.welcome-article p {
+  padding: 10px 0;
+}
+.welcome-intro {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+.welcome-article {
+  margin-top: 20px;
+}
+.welcome-article h2 {
+  color: #B62537;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+.welcome-article img {
+  float: left;
+  margin-right: 20px;
+}
+.main-footer {
+  padding: 50px 0;
+  margin-bottom: 52px;
+  text-align: center;
+  border-bottom: 30px solid #B62537;
+}
+.prior-info {
+  margin-bottom: 40px;
+}
+.prior-info a {
+  color: #2080b9;
+}
+.prior-info p {
+  margin-top: 10px;
+}
+.sponsor-info {
+  width: 700px;
+  margin: 0 auto;
+}
+.sponsor-list li {
+  display: inline-block;
+  padding: 30px 20px;
+}
+.sponsor-list img {
+  height: 70px;
 }
