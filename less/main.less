@@ -1,81 +1,125 @@
 @mainColor: #B62537;
 @textColor: #222222;
 @keyTextColor: #2080b9;
+@borderColor: #eee;
 
+@mainElement: ~".main-header, .main-content";
+@asideInfo: ~".time-info, .location-info";
+@mainLink: ~".main-nav a, .register-button";
+
+.border(@width,@color){
+	border: @width solid @color;
+}
+.borderBottom(@width,@color){
+	border-bottom: @width solid @color;
+}
+.borderTop(@width,@color){
+	border-top: @width solid @color;
+}
+
+//basics
 *{
 	padding: 0;
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
 	box-sizing: border-box;
 }
-
 a{
 	text-decoration: none;
-	color: white;
 }
-
 li{
 	list-style: none;
 }
-
 p{
 	line-height: 24px;
 }
-
 body{
 	color: @textColor;
 	background: lighten(@keyTextColor,40%);
 }
 
-.main-header,
-.main-content,
+//commons
+@{mainElement},
+.location-list li{
+	overflow: hidden;
+}
+@{mainElement},
+.main-footer,
+.sponsor-info{
+	margin: 0 auto;
+}
+@{mainElement},
 .main-footer{
 	background: white;
-	margin: 0 auto;
 	width: 1024px;
 }
+.main-nav li,
+.main-aside,
+.main-section,
+.welcome-article img,
+.location-list p,
+.location-list iframe{
+	float: left;
+}
+@{mainLink},
+.main-footer{
+	text-align: center;
+}
+@{mainLink}{
+	display: block;
+	color:white;
+	background: @mainColor;
+}
+.main-nav a:hover,
+.main-nav a.active,
+.register-button:hover{
+	background: @textColor;
+}
+.social-icon li,
+.social-icon a,
+.sponsor-list li{
+	display: inline-block;
+}
+@{asideInfo},
+.welcome-intro{
+	.borderBottom(1px,@borderColor);
+}
+@{asideInfo}{
+	padding: 20px 0;
+	font-weight: 600;
+}
+.location-info h3,
+.prior-info a{
+	color:@keyTextColor;
+}
+
+//main-header
 .main-header{
 	margin-top: 52px;
-	overflow: hidden;
-	border-top: 2px solid @mainColor;
+	.borderTop(3px,@mainColor);
 }
 .main-nav{
 	margin-left: 75px;
-	li{
-		float: left;
-		a{
-			display: block;
-			height: 65px;
-			line-height: 65px;
-			background: @mainColor;
-			font-size: 16px;
-			font-weight: 600;
-			text-align: center;
-			padding: 0 12px;
-			&:hover,
-			&.active{
-				background: @textColor;
-			}
-		}
+	a{
+		height: 65px;
+		line-height: 65px;
+		padding: 0 12px;
 	}
 }
+
+//main-content
 .main-content{
 	padding: 35px 50px 50px;
-	border-bottom: 1px solid lighten(@mainColor, 45%);
-	overflow: hidden;
+	.borderBottom(1px,lighten(@mainColor,45%));
 }
+
+//main-aside
 .main-aside{
 	width: 245px;
-	float: left;
 	margin-right: 36px;
 	img{
 		width: 205px;
 	}
-}
-.time-info,
-.location-info{
-	padding: 20px 0;
-	border-bottom: 1px solid #eee;
 }
 .time-info{
 	p{
@@ -83,9 +127,6 @@ body{
 	}
 }
 .location-info{
-	h3{
-		color: @keyTextColor;
-	}
 	p{
 		padding: 10px;
 	}
@@ -95,27 +136,18 @@ body{
 	li{
 		margin-right: 20px;
 	}
-	li,
-	a{
-		display: inline-block;
-	}
-	li:first-child{
-		background: url(http://www.googlesummit.org/_/rsrc/1444170910973/config/twitter.png) no-repeat;
-	}
-	li:last-child{
-		background: url(http://www.googlesummit.org/_/rsrc/1444170909717/config/facebook.png) no-repeat;
-	}
-	a{
-		text-indent: -9999em;
-		height: 64px;
-		width: 64px;
+	img{
+		height: 60px;
+		width: 60px;
 	}
 }
 
+//main-section
 .main-section{
 	width: 643px;
-	float: left;
 }
+
+//welcome page
 .welcome-intro,
 .welcome-article{
 	p{
@@ -123,7 +155,6 @@ body{
 	}
 }
 .welcome-intro{
-	border-bottom: 1px solid #eee;
 	padding-bottom: 20px;
 }
 .welcome-article{
@@ -134,32 +165,59 @@ body{
 		margin-bottom: 20px;
 	}
 	img{
-		float: left;
 		margin-right: 20px;
 	}
 }
+
+//register page
+.register-content{
+	ul{
+		margin: 20px 0 40px 40px;
+		li{
+			list-style: disc;
+		}
+	}
+}
+.register-button{
+	font-size: 16px;
+	line-height: 60px;
+	height: 60px;
+	width: 150px;
+	margin-left: 50px;
+}
+
+// location page
+.location-list{
+	padding-top: 40px;
+	li:first-child{
+		margin-bottom: 40px;
+	}
+	p{
+		width: 200px;
+	}
+	iframe{
+		.border(2px,@borderColor);
+		padding: 10px;
+	}
+}
+
+//main-footer
 .main-footer{
 	padding: 50px 0;
 	margin-bottom: 52px;
-	text-align: center;
-	border-bottom: 30px solid @mainColor;
+	.borderBottom(30px,@mainColor);
 }
 .prior-info{
 	margin-bottom: 40px;
-	a{
-		color:@keyTextColor;
-	}
 	p{
 		margin-top: 10px;
 	}
 }
 .sponsor-info{
 	width: 700px;
-	margin: 0 auto;
 }
 .sponsor-list{
 	li{
-		display: inline-block;
 		padding: 30px 20px;
 	}
 	img{
