@@ -1,12 +1,15 @@
-@mainColor: #B62537;
-@textColor: #222222;
-@keyTextColor: #2080b9;
-@borderColor: #eee;
+// --- define variables
+@main-color: #B62537;
+@text-color: #222222;
+@keytext-color: #2080b9;
+@border-color: #eee;
 
-@mainElement: ~".main-header, .main-content";
-@asideInfo: ~".time-info, .location-info";
-@mainLink: ~".main-nav a, .register-button";
+@main-element: ~".main-header, .main-content";
+@aside-info: ~".time-info, .location-info";
+@main-link: ~".main-nav a, .register-button";
 
+
+// --- mixins
 .border(@width,@color){
 	border: @width solid @color;
 }
@@ -17,7 +20,7 @@
 	border-top: @width solid @color;
 }
 
-//basics
+// --- basics
 *{
 	padding: 0;
 	margin: 0;
@@ -34,21 +37,21 @@ p{
 	line-height: 24px;
 }
 body{
-	color: @textColor;
-	background: lighten(@keyTextColor,40%);
+	color: @text-color;
+	background: lighten(@keytext-color,40%);
 }
 
-//commons
-@{mainElement},
+// --- commons
+@{main-element},
 .location-list li{
 	overflow: hidden;
 }
-@{mainElement},
+@{main-element},
 .main-footer,
 .sponsor-info{
 	margin: 0 auto;
 }
-@{mainElement},
+@{main-element},
 .main-footer{
 	background: white;
 	width: 1024px;
@@ -61,42 +64,48 @@ body{
 .location-list iframe{
 	float: left;
 }
-@{mainLink},
+@{main-link},
 .main-footer{
 	text-align: center;
 }
-@{mainLink}{
+@{main-link}{
 	display: block;
 	color:white;
-	background: @mainColor;
+	background: @main-color;
 }
 .main-nav a:hover,
 .main-nav a.active,
 .register-button:hover{
-	background: @textColor;
+	background: @text-color;
 }
 .social-icon li,
 .social-icon a,
 .sponsor-list li{
 	display: inline-block;
 }
-@{asideInfo},
+@{aside-info},
 .welcome-intro{
-	.borderBottom(1px,@borderColor);
+	.borderBottom(1px,@border-color);
 }
-@{asideInfo}{
+@{aside-info}{
 	padding: 20px 0;
 	font-weight: 600;
 }
 .location-info h3,
 .prior-info a{
-	color:@keyTextColor;
+	color:@keytext-color;
+}
+.welcome-intro,
+.welcome-article{
+	p{
+		padding: 10px 0;
+	}
 }
 
-//main-header
+// --- main-header
 .main-header{
 	margin-top: 52px;
-	.borderTop(3px,@mainColor);
+	.borderTop(3px,@main-color);
 }
 .main-nav{
 	margin-left: 75px;
@@ -107,13 +116,13 @@ body{
 	}
 }
 
-//main-content
+// --- main-content
 .main-content{
 	padding: 35px 50px 50px;
-	.borderBottom(1px,lighten(@mainColor,45%));
+	.borderBottom(1px,lighten(@main-color,45%));
 }
 
-//main-aside
+// --- main-aside
 .main-aside{
 	width: 245px;
 	margin-right: 36px;
@@ -142,25 +151,19 @@ body{
 	}
 }
 
-//main-section
+// --- main-section
 .main-section{
 	width: 643px;
 }
 
-//welcome page
-.welcome-intro,
-.welcome-article{
-	p{
-		padding: 10px 0;
-	}
-}
+// --- welcome page
 .welcome-intro{
 	padding-bottom: 20px;
 }
 .welcome-article{
 	margin-top: 20px;
 	h2{
-		color: @mainColor;
+		color: @main-color;
 		font-size: 36px;
 		margin-bottom: 20px;
 	}
@@ -169,7 +172,7 @@ body{
 	}
 }
 
-//register page
+// --- register page
 .register-content{
 	ul{
 		margin: 20px 0 40px 40px;
@@ -186,7 +189,7 @@ body{
 	margin-left: 50px;
 }
 
-// location page
+// --- location page
 .location-list{
 	padding-top: 40px;
 	li:first-child{
@@ -196,16 +199,16 @@ body{
 		width: 200px;
 	}
 	iframe{
-		.border(2px,@borderColor);
+		.border(2px,@border-color);
 		padding: 10px;
 	}
 }
 
-//main-footer
+// --- main-footer
 .main-footer{
 	padding: 50px 0;
 	margin-bottom: 52px;
-	.borderBottom(30px,@mainColor);
+	.borderBottom(30px,@main-color);
 }
 .prior-info{
 	margin-bottom: 40px;
