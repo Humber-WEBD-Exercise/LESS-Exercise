@@ -1,2 +1,3 @@
-# QiongrongJiang_Assign2
-Web Programming 3
+# LESS Exercise
+
+Web pages with LESS
